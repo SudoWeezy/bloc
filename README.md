@@ -111,7 +111,7 @@ algokit doctor
 - `Skip CD`
 - `Y`
 
-> Can also be done with algokit init on a already create backend + algokit project link
+> Can also be done with `algokit init` on a already create backend + `algokit project link`
 
 `$ cd digital_marketplace`
 `$ cd projects/digital_marketplace-contracts/`
