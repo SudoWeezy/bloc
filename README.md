@@ -24,9 +24,7 @@ Introduction to blockchain
 
 ## Smart contract Workshop:
 
-### Useful Resources - Note: Code used in workshop is below commands!!
-
-#### Intitilize your algokit project:
+### Intitilize your algokit project:
 - `$ algokit init`
 - Choose `Smart Contracts` `Python`
 - Name the project `digital_marketplace`
@@ -34,13 +32,13 @@ Introduction to blockchain
 - Choose `Production` `Python`
 - Type `Y` for bootstrap
 
-#### Reset local net:
+### Reset local net:
 - `$ algokit localnet reset`
 
-#### Start local net:
+### Start local net:
 - `$ algokit localnet start`
 
-#### Build Smart Contract:
+### Build Smart Contract:
 - `$ algokit project run build`
 
 > look at:
@@ -50,17 +48,17 @@ Introduction to blockchain
 - `tests/digital_marketplace_client_test.py`
 - `tests/digital_marketplace_test.py`
 
-#### Test Smart Contract:
+### Test Smart Contract:
 - `$ algokit project run test`
 
-#### Explore local net:
+### Explore local net:
 - `$ algokit explore`
 
-#### Deploy Smart Contract:
+### Deploy Smart Contract:
 - Click run & debug -> Choose Deploy then run OR `$ algokit project deploy localnet`
 
 
-#### DEBUG
+### DEBUG
 Then follow the questionaire and afterwards enter the workspace as prompted.
 Once the local/codespace has loaded in, you need to get your localnet started:
 algokit localnet start
