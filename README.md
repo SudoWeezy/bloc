@@ -30,6 +30,7 @@ Introduction to blockchain
 - Name the project `digital_marketplace`
 - Name the smart contract app `digital_marketplace`
 - Choose `Production` `Python`
+- Skip `CD`
 - Type `Y` for bootstrap
 
 ### Reset local net:
