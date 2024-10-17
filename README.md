@@ -26,7 +26,7 @@ Introduction to blockchain
 
 ### Intitilize your algokit project:
 - `$ algokit init`
-- Choose `Smart Contracts` `Python`
+- Choose `Smart Contracts & Front End` `Python`
 - Name the project `digital_marketplace`
 - Name the smart contract app `digital_marketplace`
 - Choose `Production` `Python`
