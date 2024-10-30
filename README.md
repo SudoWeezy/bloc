@@ -30,7 +30,6 @@ Introduction to blockchain
 - `$ python`
 
 ```python
-from utils import get_accounts
 from algosdk import account, mnemonic
 
 private_key, address = account.generate_account()
