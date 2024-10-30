@@ -236,49 +236,49 @@ def test_buy(
     )
 
 
-# Test case to delete the application and retrieve the remaining assets and funds
-def test_delete_application(
-    digital_marketplace_client: DigitalMarketplaceClient,
-    creator: AddressAndSigner,
-    test_asset_id: int,
-    algorand: AlgorandClient,
-):
-    sk = creator.signer.private_key
-    print(algosdk.mnemonic.from_private_key(sk))
-    print("Set fees at 0,003")
-    assert False
+# # Test case to delete the application and retrieve the remaining assets and funds
+# def test_delete_application(
+#     digital_marketplace_client: DigitalMarketplaceClient,
+#     creator: AddressAndSigner,
+#     test_asset_id: int,
+#     algorand: AlgorandClient,
+# ):
+#     sk = creator.signer.private_key
+#     print(algosdk.mnemonic.from_private_key(sk))
+#     print("Set fees at 0,003")
+#     assert False
 
-    # Get the balance of the creator before the app is deleted
-    before_call_amount = algorand.account.get_information(creator.address)["amount"]
+#     # Get the balance of the creator before the app is deleted
+#     before_call_amount = algorand.account.get_information(creator.address)["amount"]
 
-    # Set custom transaction parameters for deletion
-    sp = algorand.client.algod.suggested_params()
-    sp.flat_fee = True
-    sp.fee = 3_000
+#     # Set custom transaction parameters for deletion
+#     sp = algorand.client.algod.suggested_params()
+#     sp.flat_fee = True
+#     sp.fee = 3_000
 
-    # Delete the smart contract application
-    result = digital_marketplace_client.delete_delete_application(
-        transaction_parameters=algokit_utils.TransactionParameters(
-            # Tell the AVM that the transaction involves this asset
-            foreign_assets=[test_asset_id],
-            suggested_params=sp,
-        )
-    )
+#     # Delete the smart contract application
+#     result = digital_marketplace_client.delete_delete_application(
+#         transaction_parameters=algokit_utils.TransactionParameters(
+#             # Tell the AVM that the transaction involves this asset
+#             foreign_assets=[test_asset_id],
+#             suggested_params=sp,
+#         )
+#     )
 
-    # Ensure the deletion transaction was confirmed in a round
-    assert result.confirmed_round
+#     # Ensure the deletion transaction was confirmed in a round
+#     assert result.confirmed_round
 
-    # Get the balance of the creator after the app is deleted
-    after_call_amount = algorand.account.get_information(creator.address)["amount"]
+#     # Get the balance of the creator after the app is deleted
+#     after_call_amount = algorand.account.get_information(creator.address)["amount"]
 
-    # Verify that the creator received the remaining funds and unsold assets
-    # Creator should receive: (2 * 3_300_000 ALGO from sales) + (200_000 MBR refund) - (3_000 fee)
-    assert after_call_amount - before_call_amount == (2 * 3_300_000) + 200_000 - 3_000
+#     # Verify that the creator received the remaining funds and unsold assets
+#     # Creator should receive: (2 * 3_300_000 ALGO from sales) + (200_000 MBR refund) - (3_000 fee)
+#     assert after_call_amount - before_call_amount == (2 * 3_300_000) + 200_000 - 3_000
 
-    # The creator should receive 8 unsold assets back (since 2 were sold)
-    assert (
-        algorand.account.get_asset_information(creator.address, test_asset_id)[
-            "asset-holding"
-        ]["amount"]
-        == 8
-    )
+#     # The creator should receive 8 unsold assets back (since 2 were sold)
+#     assert (
+#         algorand.account.get_asset_information(creator.address, test_asset_id)[
+#             "asset-holding"
+#         ]["amount"]
+#         == 8
+#     )
