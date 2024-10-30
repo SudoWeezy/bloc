@@ -26,6 +26,7 @@ Introduction to blockchain
 
 ### Create a testnet account
 - `$ source projects/testnet/.venv/bin/activate`
+> Windows: `$ .venv\Scripts\activate`
 - `$ python`
 
 ```python
