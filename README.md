@@ -6,8 +6,8 @@ Introduction to blockchain
 ### Intitilize your algokit project:
 - `$ algokit init`
 - Choose `Smart Contracts` `Python`
-- Name the project `testnet`
-- Name the smart contract app `testnet`
+- Name the project `tnet`
+- Name the smart contract app `tnet`
 - Choose `Production` `Python`
 - Skip `CD`
 - Type `Y` for bootstrap
