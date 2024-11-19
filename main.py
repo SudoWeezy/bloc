@@ -52,14 +52,7 @@ print("Asset ID:", asset_id)
 # Create receiver account
 receiver_acct = client.account.random()
 
-# Fund creator account
-client.send.payment(
-    PayParams(
-        sender=dispenser_acct.address,
-        receiver=receiver_acct.address,
-        amount=10_000_000
-    )
-)
+
 
 # Transfer Asset
 try:
